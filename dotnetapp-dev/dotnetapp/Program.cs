@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+using Utils;
 using static System.Console;
 
 public static class Program
@@ -13,9 +14,10 @@ public static class Program
           message = String.Join(" ",args);
         }
 
-        WriteLine(GetBot(message));
+        var reversedString = $"Reversed string: {ReverseUtil.ReverseString(message)}";
+        WriteLine(GetBot(reversedString));
         WriteLine("**Environment**");
-        WriteLine($"Platform: .NET Core 1.0");
+        WriteLine($"Platform: .NET Core 2.0");
         WriteLine($"OS: {RuntimeInformation.OSDescription}");
         WriteLine();
   }

@@ -1,5 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Globalization;
 using static System.Console;
 
 public static class Program
@@ -10,13 +12,14 @@ public static class Program
           
         if (args.Length > 0) 
         {
-          message = String.Join(" ",args);
+          message = String.Join(" ", args);
         }
 
         WriteLine(GetBot(message));
         WriteLine("**Environment**");
-        WriteLine($"Platform: .NET Core 1.1");
+        WriteLine($"Platform: .NET Core 2.0");
         WriteLine($"OS: {RuntimeInformation.OSDescription}");
+        WriteLine($"Culture: {CultureInfo.CurrentCulture.DisplayName}");
         WriteLine();
   }
 
